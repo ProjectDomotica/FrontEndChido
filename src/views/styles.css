@@ -1,0 +1,69 @@
+/* Inicia Apartado de header */
+.header {
+    background-color: rgb(47, 47, 47);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    height: 50px;
+    margin-bottom: 30px;
+  }
+  
+  .neonText {
+    animation: flicker 2s infinite alternate;
+    color: #fff;
+  }
+  /* Flickering animation */
+@keyframes flicker {
+    
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px rgb(255, 251, 0),
+        0 0 80px rgb(255, 251, 0),
+        0 0 90px rgb(255, 251, 0),
+        0 0 100px rgb(255, 251, 0),
+        0 0 150px rgb(255, 251, 0);
+    
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+  }
+  
+/* Termina apartado de header */
+
+  .Noe {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    height: 110px;
+    border: 5px solid white;
+    border-radius: 14px;
+    background: #e0e0e0;
+    box-shadow:  7px 7px 14px #bebebe,
+               -7px -7px 14px #ffffff;
+  }
+  
+  .Noe:hover {
+    box-shadow:  16px 16px 32px #bebebe,
+                -16px -16px 32px #ffffff;
+  }
+
+
+.icons {
+    width: 30px;
+    height: auto;
+    justify-self: center;
+    display: inline;
+}
