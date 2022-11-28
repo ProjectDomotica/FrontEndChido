@@ -9,4 +9,4 @@ Comando para correrlo
 ### `npm start`
 
 # Vista previa de la aplicacion
-![image](https://user-images.githubusercontent.com/60763319/204205164-d65a9079-0eba-4d83-a373-23707b069e2a.png)
+![image](https://user-images.githubusercontent.com/60763319/204346175-d27c4916-0ec2-48cf-9c75-c70e75b90963.png)
