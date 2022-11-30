@@ -1,8 +1,9 @@
+import React, {useState, useEffect} from 'react'
 import './App.css';
 import { Metrics } from './Assets/data';
 import MainPage from './views';
 
-
+/*
 export const getdata = () => {
   fetch('http://localhost:4000/api/home', {
   credentials: 'omit'
@@ -15,12 +16,13 @@ export const getdata = () => {
 }
 
 getdata()
-
+*/
   
 function App() {  
   return (
     <>
-      <MainPage props={Metrics}/>
+      
+      <MainPage/>
     </>
   );
 }

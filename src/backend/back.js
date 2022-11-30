@@ -39,15 +39,12 @@ const Cat = mongoose.model('home', {
 });
 
 
-/*async function getmongo(){
-  try{
-    const mongopost = await Cat.find().sort({_id:-1}).limit(1)
-    console.log(mongopost)
-    return mongopost
-  }catch(error){
-    console.log(error.message)
-  }
+/*
+{
+  "Temperatura": 40, 
+  "Humedad": 10,
+  "CO": 1200,
+  "tiempo": "8:30",
+  "Lumens": true
 }
-
-getmongo()
 */

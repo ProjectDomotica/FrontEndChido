@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './styles.css';
 import { Box, Container } from '@mui/system';
 import { 
@@ -7,7 +7,7 @@ import {
     Seco, Humedo, Tsunami,
     Excelente, Buena, Mala, Letal
   } from '../Assets/img';
-const MainPage = ({props}) => {
+const MainPage = () => {
 
     const light = [{borderColor: '#f6ef64'}, {borderColor: 'black'}]
 
@@ -54,13 +54,30 @@ const MainPage = ({props}) => {
       else if(Gas > 1000){ return 'Letal' } 
     }
 
+    const [users, setUsers] = useState();
+
+    // Function to collect data
+    const getApiData = async () => {
+      const response = await fetch(
+        "http://localhost:4000/api/home", {
+          credentials: 'omit'
+        }
+      ).then((response) => response.json());
+  
+      setUsers(response);
+    };
+  
+    useEffect(() => {
+      getApiData();
+    }, []);
+
   return (
     <>
       <Container className='header'>
         <Box className='neonText'>Dark Solutions</Box>
       </Container>
       <Container>
-        {props.map(metric => {
+        {users && users.map(metric => {
         return(
         <Box display="grid" gridTemplateColumns="repeat(4, 1fr)" gap={4} key={1}>
 
