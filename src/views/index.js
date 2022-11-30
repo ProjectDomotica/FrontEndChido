@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './styles.css';
 import { Box, Container } from '@mui/system';
-import { Divider} from '@mui/material';
 import { 
-    Lock, Unlock, 
     LightOn, LightOff,
     Frio, Fresco, Agradable, Caliente,
     Seco, Humedo, Tsunami,
@@ -12,7 +10,6 @@ import {
 const MainPage = ({props}) => {
 
     const light = [{borderColor: '#f6ef64'}, {borderColor: 'black'}]
-    const door = [{borderColor: '#82ee46'}, {borderColor: '#ed3939'}]
 
     const TempColor = (Temperatura) => {
         if (Temperatura <= 15 ){ return {borderColor: 'lightblue'} }
@@ -68,37 +65,31 @@ const MainPage = ({props}) => {
         <Box display="grid" gridTemplateColumns="repeat(4, 1fr)" gap={4} key={1}>
 
           <Box gridColumn="span 4" className='Noe'>
-            <Box>{metric.Hora}</Box>
+            <Box>{metric.tiempo}</Box>
           </Box>
 
-          <Box gridColumn="span 2" className='Noe' style={GasColor(metric.Carbono)}>
+          <Box gridColumn="span 2" className='Noe' style={GasColor(metric.CO)}>
             <Box>Calidad de aire</Box>
-            <img src={GasImg(metric.Carbono)} className='icons'/>
-            <Box>{GasText(metric.Carbono)}</Box>
+            <img src={GasImg(metric.CO)} alt='Dioxido de carbono' className='icons'/>
+            <Box>{GasText(metric.CO)}</Box>
           </Box>
 
           <Box gridColumn="span 2" className='Noe' style={HumColor(metric.Humedad)}>
             <Box>Humedad</Box>
-            <img src={HumImg(metric.Humedad)} className='icons'/>
+            <img src={HumImg(metric.Humedad)} alt='Humedad' className='icons'/>
             <Box>{metric.Humedad}%</Box>
           </Box>
 
           <Box gridColumn="span 4" className='Noe' style={TempColor(metric.Temperatura)}>
             <Box>Temperatura</Box>
-            <img src={TempImg(metric.Temperatura)} className='icons' />
+            <img src={TempImg(metric.Temperatura)} alt='Temperatura' className='icons' />
             <Box>{metric.Temperatura}°C</Box>
           </Box>
 
-          <Box gridColumn="span 2" className='Noe' style={metric.Luz ? light[0] : light[1]}>
+          <Box gridColumn="span 4" className='Noe' style={metric.Lumen  ? light[0] : light[1]}>
             <Box>Luz</Box>
-            <img src={metric.Luz ? LightOn : LightOff} className='icons'/>
-            <Box>{metric.Luz  ? 'Encendida' : 'Apagada'}</Box>
-          </Box>
-
-          <Box gridColumn="span 2" className='Noe' style={metric.Puerta ? door[0] : door[1]}>
-            <Box>Puerta</Box>
-            <img src={metric.Puerta ? Unlock : Lock} className='icons'/>
-            <Box>{metric.Puerta  ? 'Abierta' : 'Cerrada'}</Box>
+            <img src={metric.Lumen ? LightOn : LightOff} alt='Luz' className='icons'/>
+            <Box>{metric.Lumen ? 'Encendida' : 'Apagada'}</Box>
           </Box>
 
         </Box>

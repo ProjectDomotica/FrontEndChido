@@ -1,4 +1,3 @@
-
 const RandomNumber = (max, min) => {
     return Math.floor(Math.random() * (max - min) + min)
 }
@@ -20,17 +19,14 @@ let varTemperatura = RandomNumber(40, 0)
 let varHumedad = RandomNumber(100, 0)
 let varCarbono = RandomNumber(2000, 0)
 let varHora = showTime()
-let varLuz = RandomNumber(1, 0)
-let varPuerta = RandomNumber(1, 0)
-
+let varLuz = Boolean(Math.round(Math.random()));
 
 
 export const Metrics = [{
         Temperatura: varTemperatura, 
         Humedad: varHumedad,
-        Carbono: varCarbono,
-        Hora: varHora,
-        Luz: varLuz,
-        Puerta: varPuerta
+        CO: varCarbono,
+        tiempo: varHora,
+        Lumen: varLuz,
     }]
 
