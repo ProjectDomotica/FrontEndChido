@@ -103,10 +103,10 @@ const MainPage = () => {
             <Box>{metric.Temperatura}°C</Box>
           </Box>
 
-          <Box gridColumn="span 4" className='Noe' style={metric.Lumen  ? light[0] : light[1]}>
+          <Box gridColumn="span 4" className='Noe' style={metric.Lumens  ? light[0] : light[1]}>
             <Box>Luz</Box>
-            <img src={metric.Lumen ? LightOn : LightOff} alt='Luz' className='icons'/>
-            <Box>{metric.Lumen ? 'Encendida' : 'Apagada'}</Box>
+            <img src={metric.Lumens ? LightOn : LightOff} alt='Luz' className='icons'/>
+            <Box>{metric.Lumens ? 'Encendida' : 'Apagada'}</Box>
           </Box>
 
         </Box>
